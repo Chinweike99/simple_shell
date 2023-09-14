@@ -17,12 +17,12 @@
 
 typedef struct data
 {
-        char **av;
-        char *str;
+	char **av;
+	char *str;
 	int count;
-        char **args;
-        int stat;
-        char *pid;
+	char **args;
+	int stat;
+	char *pid;
 	char **_environ;
 } dataShell;
 
@@ -34,8 +34,8 @@ typedef struct data
  */
 typedef struct _linked_list
 {
-        char isolator;
-        struct _linked_list *next;
+	char isolator;
+	struct _linked_list *next;
 } _linkedlist;
 
 /**
@@ -46,8 +46,8 @@ typedef struct _linked_list
  */
 typedef struct _track_list
 {
-        char *track;
-        struct _track_list *next;
+	char *track;
+	struct _track_list *next;
 } _tracklist;
 
 /**
@@ -60,10 +60,10 @@ typedef struct _track_list
  */
 typedef struct _single_list
 {
-        int varLen;
-        char *value;
-        int lenVal;
-        struct _single_list *next;
+	int varLen;
+	char *value;
+	int lenVal;
+	struct _single_list *next;
 } singlelist;
 
 /**
@@ -73,6 +73,38 @@ typedef struct _single_list
  */
 typedef struct builtin_s
 {
-        char *ename;
-        int (*f)(dataShell *data);
+	char *ename;
+	int (*f)(dataShell *data);
 } builtint;
+
+
+/*******STRING 1 UTILS*******/
+
+int _strspn(char *str, char *accbytes);
+int _strcmp(char *str1, char *str2);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, const char *src);
+char *_strchr(char *str, char c);
+
+/*******STRING 2 UTILS ********/
+char *_strdup(const char *str);
+int _strlen(const char str);
+int cmpChars(char str[], const char *delim);
+
+/******STRING  3 UTILS******/
+char *_strtok(char str[], const char *delim);
+int _isdigit(const char *str);
+void revString(char *str);
+
+/*******STDLIBUTIL******/
+int getLen(int m);
+char *_itoa(int m);
+int _atoi(char *str);
+
+/********LOOP ********/
+void shellLoop(dataShell *data);
+char *noComment(char *inStr);
+
+
+
+#endif
