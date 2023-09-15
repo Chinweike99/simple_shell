@@ -1,9 +1,9 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * getHelp - function that retrieves help messages according builtin
- * @datash: data structure (args and input)
- * Return: Return 0
+ * getHelp - function that retrieves help messages
+ * @data: data structure for args and str
+ * Return: Return 1
 */
 int getHelp(dataShell *data)
 {

@@ -1,9 +1,10 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * getError - calls the error according the builtin, syntax or permission
- * @datash: data structure that contains arguments
- * @eval: error value
+ * getError - Function that calls the error
+ * with respect to the builtin, permission or the syntax
+ * @data: data structure that contains arguments
+ * @val: error value
  * Return: error
  */
 int getError(dataShell *data, int val)
@@ -28,7 +29,6 @@ int getError(dataShell *data, int val)
 			error = errorMsg(data);
 		break;
 	}
-
 	if (error)
 	{
 		write(STDERR_FILENO, error, _strlen(error));

@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _callp - Handle the crtl + c call in prompt
- * @sig: Signal handler
+ * _callp - Function to Handle the crtl + c call
+ * @cals: Handles Singnals
  */
-void _call(int cals)
+void _callp(int cals)
 {
 	(void)cals;
 	write(STDOUT_FILENO, "\nSimple_Shell ", 14);

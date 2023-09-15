@@ -1,12 +1,11 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * infoCopy - copies info to create
- * a new env or alias
- * @name: name (env or alias)
- * @value: value (env or alias)
+ * infoCopy - Function that copies info to create new env
+ * @ename: name of env or alias
+ * @value: The value of the env or alias
  *
- * Return: new env or alias.
+ * Return: Return new env or alias.
  */
 char *infoCopy(char *ename, char *value)
 {
@@ -26,12 +25,11 @@ char *infoCopy(char *ename, char *value)
 }
 
 /**
- * setEnv - sets an environment variable
- *
- * @name: name of the environment variable
- * @value: value of the environment variable
- * @datash: data structure (environ)
- * Return: no return
+ * setEnv - Function that sets environment variable
+ * @ename: The name of the environment variable
+ * @value: value of the variable for environment
+ * @data: data structure (environ)
+ * Return: return nothing
  */
 void setEnv(char *ename, char *value, dataShell *data)
 {
@@ -58,11 +56,9 @@ void setEnv(char *ename, char *value, dataShell *data)
 }
 
 /**
- * envSet - compares env variables names
- * with the name passed.
- * @datash: data relevant (env name and env value)
- *
- * Return: 1 on success.
+ * envSet - Function that compares env variables names
+ * @data: data relevant (env name and env value)
+ * Return: Return 1 on success.
  */
 int envSet(dataShell *data)
 {
@@ -79,11 +75,9 @@ int envSet(dataShell *data)
 }
 
 /**
- * delEnv - deletes a environment variable
- *
- * @datash: data relevant (env name)
- *
- * Return: 1 on success.
+ * delEnv - Function that deletes an environment variable
+ * @data: data
+ * Return: Return 1 on success.
  */
 int delEnv(dataShell *data)
 {
@@ -118,7 +112,7 @@ int delEnv(dataShell *data)
 		if (x != Z)
 		{
 			environRealloc [y] = (*data)._environ[x];
-			j++;
+			y++;
 		}
 	}
 	environRealloc [y] = NULL;

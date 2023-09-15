@@ -1,49 +1,41 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * cmpName - compares env variables names
- * with the name passed.
- * @nenv: name of the environment variable
- * @name: name passed
- *
- * Return: 0 if are not equal. Another value if they are.
+ * cmpName - Function that compares variable
+ * names and names passed.
+ * @env1: variable environment name
+ * @ename: name passed
+ * Return: 0 if not equal. different value if they are.
  */
 int cmpName(const char *env1, const char *ename)
 {
 	int x;
 
-	for (x = 0; env1[x] != '='; x++)
+	x = 0;
+	while (env1[x] != '=')
 	{
-		if (env[x] != ename[i])
-		{
+		if (env1[x] != ename[x])
 			return (0);
-		}
+		x++;
 	}
-
 	return (x + 1);
 }
 
 /**
- * _getEnv - get an environment variable
- * @name: name of the environment variable
+ * getEnv - Function to get environment variable
+ * @ename: the environment variabl ename
  * @_environ: environment variable
- *
- * Return: value of the environment variable if is found.
- * In other case, returns NULL.
+ * Return: variable value of envionment if found. else, returns NULL.
  */
 char *getEnv(const char *ename, char **_environ)
 {
 	char *ptrenv;
 	int x, chn;
 
-	/* Initialize ptr_env value */
 	ptrenv = NULL;
 	chn = 0;
-	/* Compare all environment variables */
-	/* environ is declared in the header file */
 	for (x = 0; _environ[x]; x++)
 	{
-		/* If name and env are equal */
 		chn = cmpName(_environ[x], ename);
 		if (chn)
 		{
@@ -56,10 +48,9 @@ char *getEnv(const char *ename, char **_environ)
 }
 
 /**
- * envVar - prints the evironment variables
- *
- * @datash: data relevant.
- * Return: 1 on success.
+ * envVar - Function that prints the evironment variables
+ * @data: data relevant.
+ * Return: Return 1 on success.
  */
 int envVar(dataShell *data)
 {

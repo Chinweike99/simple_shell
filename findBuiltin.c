@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * findBuilt - finds builtins and commands
- *
- * @datash: data relevant (args)
+ * findBuilt - Function that finds builtins and commands
+ * @data: data relevant (args)
  * Return: 1 on success.
  */
-int exec_line(dataShell *data)
+int findBuilt(dataShell *data)
 {
 	int (*builtin)(dataShell *data);
 
@@ -21,10 +20,9 @@ int exec_line(dataShell *data)
 	return (cmdExec(data));
 }
 /**
- * shellExit - exits the shell
- *
- * @datash: data relevant (status and args)
- * Return: 0 on success.
+ * shellExit - Function that exits shell
+ * @data: handles relevant (status and args)
+ * Return: Returns 0 on success.
  */
 int shellExit(dataShell *data)
 {
@@ -50,12 +48,10 @@ int shellExit(dataShell *data)
 	return (0);
 }
 
-#include "main.h"
-
 /**
- * getBuiltin - builtin that pais the command in the arg
+ * getBuiltin - Function builtin that pais the command
  * @cmd: command
- * Return: function pointer of the builtin command
+ * Return: Returns the function pointer
  */
 int (*getBuiltin(char *cmd))(dataShell *)
 {

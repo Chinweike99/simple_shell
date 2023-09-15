@@ -137,6 +137,33 @@ int ifexecutable(dataShell *data);
 int verifyPermit(char *direct, dataShell *data);
 int execCmd(dataShell *data);
 
+/********findBuiltin*****/
+int findBuilt(dataShell *data);
+int shellExit(dataShell *data);
+int (*getBuiltin(char *cmd))(dataShell *);
+/***********getError********/
+int getError(dataShell *data, int val);
+
+/********getHelp***********/
+int getHelp(dataShell *data);
+
+/************getLine*******/
+void assignLine(char **ptr, size_t *v, char *buff, size_t y);
+ssize_t getLine(char **ptr, size_t *v, FILE *stream);
+void _callp(int cals);
+
+/***********HandleEnviron1*******/
+int cmpName(const char *env1, const char *ename);
+ar *getEnv(const char *ename, char **_environ);
+int envVar(dataShell *data);
+
+/**********handleEnvironment2******/
+char *infoCopy(char *ename, char *value);
+void setEnv(char *ename, char *value, dataShell *data);
+int envSet(dataShell *data);
+int delEnv(dataShell *data);
+
+
 
 
 #endif

@@ -1,11 +1,11 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * assignLine - assigns the line var for get_line
- * @lineptr: Buffer that store the input str
- * @buffer: str that is been called to line
- * @n: size of line
- * @j: size of buffer
+ * assignLine - Function that assigns the line variable
+ * @ptr: Buffer that store the input str
+ * @buff: str that is been called to line
+ * @v: The line size
+ * @y: The buffer size
  */
 void assignLine(char **ptr, size_t *v, char *buff, size_t y)
 {
@@ -34,9 +34,9 @@ void assignLine(char **ptr, size_t *v, char *buff, size_t y)
 	}
 }
 /**
- * getLine - Read inpt from stream
- * @lineptr: buffer that stores the input
- * @n: size of lineptr
+ * getLine - Function to Read input from stream
+ * @ptr: The buffer that stores input
+ * @v: ptr size
  * @stream: stream to read from
  * Return: The number of bytes
  */
