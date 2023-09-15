@@ -123,6 +123,26 @@ char **_realloc2(char **ptr, unsigned int old_size, unsigned int new_size);
 void setData(dataShell *data, char **av);
 void freeData(dataShell *data);
 
+/***********splitted.c********/
+char **lineSplit(char *str);
+int splitCmd(dataShell *data, char str);
+char *swapChar(char *str, int bool);
+void addNodes(_linkedlist **head_s, _tracklist **head_l,char *str);
+void goNext(_linkedlist **list_s, _tracklist **list_l, dataShell *data);
+
+/********UTILITY1********/
+void helpEnv(void);
+void helpSetenv(void);
+void helpUnsetenv(void);
+void helpGeneral(void);
+void helpExit(void);
+
+/*******UTILITY2********/
+void auxhelp(void);
+void helpalias(void);
+void helpcd(void);
+
+
 /********changePD********/
 void changeDir(dataShell *data);
 void cdInto(dataShell *data);
