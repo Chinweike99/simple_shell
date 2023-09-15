@@ -163,6 +163,28 @@ void setEnv(char *ename, char *value, dataShell *data);
 int envSet(dataShell *data);
 int delEnv(dataShell *data);
 
+/********handleError********/
+char *strmsg(dataShell *data, char *mes, char *error, char *verstr);
+char *errorMsg(dataShell *data);
+char *unFound(dataShell *data);
+char *errorShell(dataShell *data);
+
+/*******handleError2*********/
+char *errorEnv(dataShell *data);
+char *pathError(data_shell *datash);
+
+/***********listOperation**********/
+_linkedlist *sepEnd(_linkedlist **head, char item);
+void freeList(_linkedlist **head);
+_tracklist *addcmd(_tracklist **head, char *track);
+void freeLi(_tracklist **head);
+
+/**********checkSyntax*************/
+int charRepeated(char *str, int x);
+int findError(char *str, int x, char last);
+int findChar(char *str, int *x);
+void printError(dataShell *data, char *str, int x, int bol);
+int checkSyntax(dataShell *data, char *str);
 
 
 

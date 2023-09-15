@@ -1,11 +1,11 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * sepEnd - adds a separator found at the end
- * of a sep_list.
- * @head: head of the linked list.
- * @sep: separator found (; | &).
- * Return: address of the head.
+ * sepEnd - Function that adds an isolator found at the end
+ * of _linkedlist
+ * @head: The head of the linked list.
+ * @item: isolatator found
+ * Return: head address
  */
 _linkedlist *sepEnd(_linkedlist **head, char item)
 {
@@ -34,11 +34,11 @@ _linkedlist *sepEnd(_linkedlist **head, char item)
 }
 
 /**
- * free_sep_list - frees a sep_list
- * @head: head of the linked list.
- * Return: no return.
+ * freeList - Function that frees _linkedlist
+ * @head: The head of the linked list
+ * Return: nothing.
  */
-void freList(_linkedlist **head)
+void freeList(_linkedlist **head)
 {
 	_linkedlist *tmp;
 	_linkedlist *curr;
@@ -56,11 +56,11 @@ void freList(_linkedlist **head)
 }
 
 /**
- * addcmd - adds a command line at the end
- * of a line_list.
- * @head: head of the linked list.
- * @line: command line.
- * Return: address of the head.
+ * addcmd - Function that adds a command line at end
+ * of _linkedlist
+ * @head: linked list head.
+ * @track: The command line.
+ * Return: head address
  */
 _tracklist *addcmd(_tracklist **head, char *track)
 {
@@ -89,8 +89,8 @@ _tracklist *addcmd(_tracklist **head, char *track)
 }
 
 /**
- * freeLi - frees a line_list
- * @head: head of the linked list.
+ * freeLi - Function that frees a line node
+ * @head: linked list head
  * Return: no return.
  */
 void freeLi(_tracklist **head)

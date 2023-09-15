@@ -1,9 +1,9 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * errorEnv - error message for env in get_env.
- * @datash: data relevant (counter, arguments)
- * Return: error message.
+ * errorEnv - Function for error message.
+ * @data: data relevant counter or arguments
+ * Return: error
  */
 char *errorEnv(dataShell *data)
 {
@@ -36,10 +36,9 @@ char *errorEnv(dataShell *data)
 	return (error);
 }
 /**
- * pathError - error message for path and failure denied permission.
- * @datash: data relevant (counter, arguments).
- *
- * Return: The error string.
+ * pathError - Function for error message for path.
+ * @data: data relevant counter, arguments.
+ * Return: Return the error string.
  */
 char *pathError(data_shell *datash)
 {
@@ -67,8 +66,4 @@ char *pathError(data_shell *datash)
 	free(verstr);
 	return (error);
 }
-
-
-
-File: Exec_lin
 

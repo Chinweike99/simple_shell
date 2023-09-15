@@ -1,13 +1,12 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * strmsg - function that concatenates the message for cd error
- *
- * @datash: data relevant (directory)
- * @msg: message to print
- * @error: output message
- * @ver_str: counter lines
- * Return: error message
+ * strmsg - function that concatenates error message
+ * @data: data to directory
+ * @msg: The message to be printed
+ * @error: The message
+ * @verstr: counts lines
+ * Return: Return error message
  */
 char *strmsg(dataShell *data, char *mes, char *error, char *verstr)
 {
@@ -39,9 +38,9 @@ char *strmsg(dataShell *data, char *mes, char *error, char *verstr)
 }
 
 /**
- * errorMsg - error message for cd command in get_cd
- * @datash: data relevant (directory)
- * Return: Error message
+ * errorMsg - The error message for cd command
+ * @data: data
+ * Return: Return Error message
  */
 char *errorMsg(dataShell *data)
 {
@@ -78,9 +77,9 @@ char *errorMsg(dataShell *data)
 }
 
 /**
- * error_not_found - generic error message for command not found
- * @datash: data relevant (counter, arguments)
- * Return: Error message
+ * unFound - Function for generic error message of command invalid
+ * @data: data for counter or arguments
+ * Return: Return an Error message
  */
 char *unFound(dataShell *data)
 {
@@ -110,10 +109,10 @@ char *unFound(dataShell *data)
 }
 
 /**
- * errorShell - generic error message for exit in get_exit
- * @data: data relevant (counter, arguments)
- *
- * Return: Error message
+ * errorShell - Function for generic error message to exit
+ * function getExit
+ * @data: data counter or arguments
+ * Return: Error 
  */
 char *errorShell(dataShell *data)
 {

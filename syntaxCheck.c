@@ -1,12 +1,9 @@
-Check_syntax_error.
-
 #include "main.h"
 
 /**
- * charRepeated - counts the repetitions of a char
- *
- * @input: input string
- * @i: index
+ * charRepeated - Function that counts char repeated
+ * @str: The input string
+ * @x: index
  * Return: repetitions
  */
 int charRepeated(char *str, int x)
@@ -18,13 +15,11 @@ int charRepeated(char *str, int x)
 }
 
 /**
- * findError - finds syntax errors
- *
- * @input: input string
- * @i: index
- * @last: last char read
- * Return: index of error. 0 when there are no
- * errors
+ * findError - Function that finds errors in synrax
+ * @str: input string
+ * @x: The index
+ * @last: The last char read
+ * Return: Return 0 on success
  */
 int findError(char *str, int x, char last)
 {
@@ -71,11 +66,10 @@ int findError(char *str, int x, char last)
 }
 
 /**
- * findChar - finds index of the first char
- *
- * @input: input string
- * @i: index
- * Return: 1 if there is an error. 0 in other case.
+ * findChar - Function that finds first char index
+ * @str: the input string
+ * @x: index
+ * Return: 1 on no errors and 0 in other case.
  */
 int findChar(char *str, int *x)
 {
@@ -95,13 +89,12 @@ int findChar(char *str, int *x)
 }
 
 /**
- * printError - prints when a syntax error is found
- *
- * @datash: data structure
- * @input: input string
- * @i: index of the error
- * @bool: to control msg error
- * Return: no return
+ * printError - Function to prints when a syntax error occurs
+ * @data: data struct
+ * @str: input string
+ * @x: index for the error
+ * @bol: this controls the msg error
+ * Return: nothing
  */
 void printError(dataShell *data, char *str, int x, int bol)
 {
@@ -148,12 +141,10 @@ void printError(dataShell *data, char *str, int x, int bol)
 }
 
 /**
- * checkSyntax - intermediate function to
- * find and print a syntax error
- *
- * @datash: data structure
- * @input: input string
- * Return: 1 if there is an error. 0 in other case
+ * checkSyntax - function check and print a syntax error
+ * @data: data structure
+ * @str: input string
+ * Return: 1 on error. 0 on no case
  */
 int checkSyntax(dataShell *data, char *str)
 {
