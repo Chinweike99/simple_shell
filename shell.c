@@ -31,12 +31,12 @@ void setData(dataShell *data, char **av)
 	unsigned int a;
 
 	(*data).av = av;
-	(*data).input = NULL;
+	(*data).str = NULL;
 	(*data).args = NULL;
 	(*data).stat = 0;
 	(*data).count = 1;
 
-	for (a = 0; environ[a]; a++)
+	for (a = 0; _environ[a]; a++)
 		;
 
 	(*data)._environ = malloc(sizeof(char *) * (a + 1));
@@ -63,7 +63,7 @@ int main(int ac, char **av)
 	dataShell data;
 	(void) ac;
 
-	signal(SIGINT, get_sigint);
+	signal(SIGINT, _callp);
 	setData(&data, av);
 	shellLoop(&data);
 	freeData(&data);

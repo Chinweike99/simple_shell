@@ -14,7 +14,7 @@ void _memcpy(void *destptr, const void *srcptr, unsigned int size)
 	char *char_destptr = (char *)destptr;
 	unsigned int a;
 
-	for (a = 0; i < size; a++)
+	for (a = 0; a < size; a++)
 		char_destptr[a] = char_srcptr[a];
 }
 

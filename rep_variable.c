@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * envCheck - checks if the typed variable is an env variable
@@ -8,7 +8,7 @@
  * @data: data structure
  * Return: no return
  */
-void envCheck(r_var **hd, char *inp, dataShell *data)
+void envCheck(singlelist **hd, char *inp, dataShell *data)
 {
 	int rw, chr, j, lval;
 	char **_evr;
@@ -50,7 +50,7 @@ void envCheck(r_var **hd, char *inp, dataShell *data)
  * @data: data structure
  * Return: no return
  */
-int varCheck(r_var **hd, char *inp, char *st, dataShell *data)
+int varCheck(singlelist **hd, char *inp, char *st, dataShell *data)
 {
 	int a, last, lpd;
 
@@ -92,9 +92,9 @@ int varCheck(r_var **hd, char *inp, char *st, dataShell *data)
  * @nlen: new length
  * Return: replaced string
  */
-char *replaced_str(r_var **head, char *str, char *new_str, int nlen)
+char *replaced_str(singlelist **head, char *str, char *new_str, int nlen)
 {
-	r_var *indx;
+	singlelist *indx;
 	int i, j, k;
 
 	indx = *head;
@@ -144,7 +144,7 @@ char *replaced_str(r_var **head, char *str, char *new_str, int nlen)
  */
 char *repVar(char *str, dataShell *data)
 {
-	r_var *head, *indx;
+	singlelist *head, *indx;
 	char *stat, *new_str;
 	int olen, nlen;
 

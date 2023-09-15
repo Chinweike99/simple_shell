@@ -109,10 +109,10 @@ char *noComment(char *inStr);
 char *readLine(int *eof);
 
 /********rep_variable******/
-char *replaced_str(r_var **head, char *str, char *new_str, int nlen);
+char *replaced_str(singlelist **head, char *str, char *new_str, int nlen);
 char *repVar(char *str, dataShell *data);
-int varCheck(r_var **hd, char *inp, char *st, dataShell *data);
-void envCheck(r_var **hd, char *inp, dataShell *data);
+int varCheck(singlelist **hd, char *inp, char *st, dataShell *data);
+void envCheck(singlelist **hd, char *inp, dataShell *data);
 
 /*********memUtils********/
 void _memcpy(void *destptr, const void *srcptr, unsigned int size);
