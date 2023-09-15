@@ -99,7 +99,7 @@ void goNext(_linkedlist **list_s, _tracklist **list_l, dataShell *data)
 
 	while (ls_s != NULL && iterate_sep)
 	{
-		if (*data).stat == 0)
+		if ((*data).stat == 0)
 		{
 			if ((*ls_s).isolator == '&' || (*ls_s).isolator == ';')
 				iterate_sep = 0;
