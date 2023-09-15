@@ -105,6 +105,23 @@ int _atoi(char *str);
 void shellLoop(dataShell *data);
 char *noComment(char *inStr);
 
+/*****re_variable********/
+char *readLine(int *eof);
+
+/********rep_variable******/
+char *replaced_str(r_var **head, char *str, char *new_str, int nlen);
+char *repVar(char *str, dataShell *data);
+int varCheck(r_var **hd, char *inp, char *st, dataShell *data);
+void envCheck(r_var **hd, char *inp, dataShell *data);
+
+/*********memUtils********/
+void _memcpy(void *destptr, const void *srcptr, unsigned int size);
+void *realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char **_realloc2(char **ptr, unsigned int old_size, unsigned int new_size);
+
+/********shell.c*********/
+void setData(dataShell *data, char **av);
+void freeData(dataShell *data);
 
 
 #endif
