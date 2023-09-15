@@ -13,7 +13,11 @@
 #include <limits.h>
 
 #define BUFSIZE 1024
-#define TOK_BUFSIZE 128
+#define BUFFSIZE 128
+#define T_DELIM " \t\r\n\a"
+
+
+extern char **environ;
 
 typedef struct data
 {
@@ -88,7 +92,7 @@ char *_strchr(char *str, char c);
 
 /*******STRING 2 UTILS ********/
 char *_strdup(const char *str);
-int _strlen(const char str);
+int _strlen(const char *str);
 int cmpChars(char str[], const char *delim);
 
 /******STRING  3 UTILS******/
