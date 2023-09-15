@@ -1,10 +1,11 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * colCheck - checks ":" if is in the current directory.
- * @path: type char pointer char.
- * @i: type int pointer of index.
- * Return: 1 if the path is searchable in the cd, 0 otherwise.
+ * colCheck - Function to check if colon ":"
+ * if is in the current directory.
+ * @myPath: pointer to char type.
+ * @x: pointer of index.
+ * Return: 1 on success and 0 otherwise.
  */
 int colCheck(char *myPath, int *x)
 {
@@ -23,13 +24,12 @@ int colCheck(char *myPath, int *x)
 }
 
 /**
- * locate - locates a command
- *
+ * locate - Function to locates a command
  * @cmd: command name
  * @_environ: environment variable
  * Return: location of the command.
  */
-char *locates(char *cmd, char **_environ)
+char *locate(char *cmd, char **_environ)
 {
 	char *path1, *ptrPath, *tokenPath, *direct;
 	int ldirect, lcmd, x;
@@ -73,9 +73,9 @@ char *locates(char *cmd, char **_environ)
 }
 
 /**
- * ifexecutable - determines if is an executable
- *
- * @datash: data structure
+ * ifexecutable - Function that determines if command
+ * is an executable
+ * @data: data structure
  * Return: 0 if is not an executable, other number if it does
  */
 int ifexecutable(dataShell *data)
@@ -118,11 +118,10 @@ int ifexecutable(dataShell *data)
 }
 
 /**
- * verifyPermit - verifies if user has permissions to access
- *
- * @dir: destination directory
- * @datash: data structure
- * Return: 1 if there is an error, 0 if not
+ * verifyPermit - Function to verify if user have permit
+ * @direct: directory destination
+ * @data: data structure
+ * Return: 1 on success, 0 if not
  */
 int verifyPermit(char *direct, dataShell *data)
 {
@@ -155,10 +154,10 @@ int verifyPermit(char *direct, dataShell *data)
 }
 
 /**
- * execCmd - executes command lines
+ * execCmd - Functio to execute the command lines
  *
- * @datash: data relevant (args and input)
- * Return: 1 on success.
+ * @data: takes data (args and input)
+ * Return: Return 1 on success.
  */
 int execCmd(dataShell *data)
 {

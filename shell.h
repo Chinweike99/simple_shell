@@ -123,5 +123,20 @@ char **_realloc2(char **ptr, unsigned int old_size, unsigned int new_size);
 void setData(dataShell *data, char **av);
 void freeData(dataShell *data);
 
+/********changePD********/
+void changeDir(dataShell *data);
+void cdInto(dataShell *data);
+void cdPrevious(dataShell *data);
+void cdHome(dataShell *data);
+
+/*******childD*******/
+int ccDir(dataShell *data);
+int colCheck(char *myPath, int *x);
+char *locate(char *cmd, char **_environ);
+int ifexecutable(dataShell *data);
+int verifyPermit(char *direct, dataShell *data);
+int execCmd(dataShell *data);
+
+
 
 #endif

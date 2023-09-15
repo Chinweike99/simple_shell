@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * cd_shell - changes current directory
- *
- * @datash: data relevant
- * Return: 1 on success
+ * ccDir - Function that changes the current directory
+ * @data: data 
+ * Return: Returns 1 on success
  */
 int ccDir(dataShell *data)
 {

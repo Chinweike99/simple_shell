@@ -1,11 +1,9 @@
 #include "shell.h"
 
 /**
- * changeDir - changes to the parent directory
+ * changeDir - Function to change the parent directory
  *
- * @datash: data relevant (environ)
- *
- * Return: no return
+ * @data: data relevant to the environ
  */ 
 void changeDir(dataShell *data)
 {
@@ -53,11 +51,10 @@ void changeDir(dataShell *data)
 
 
 /**
- * cdInto - changes to a directory given
- * by the user
+ * cdInto - change dirctory to user dirctory
  *
- * @datash: data relevant (directories)
- * Return: no return
+ * @data: data to the directories
+ * Return: return nothing
  */
 void cdInto(dataShell *data)
 {
@@ -88,10 +85,9 @@ void cdInto(dataShell *data)
 }
 
 /**
- * cdPrevious - changes to the previous directory
+ * cdPrevious - changes directory to the previous directory
  *
  * @data: data relevant (environ)
- * Return: no return
  */
 void cdPrevious(dataShell *data)
 {
@@ -130,10 +126,8 @@ void cdPrevious(dataShell *data)
 }
 
 /**
- * cdHome - changes to home directory
- *
+ * cdHome - changes the directory to home directory
  * @data: data relevant (environ)
- * Return: no return
  */
 void cdHome(dataShell *data)
 {
