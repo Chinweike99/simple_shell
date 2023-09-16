@@ -37,12 +37,12 @@ void changeDir(dataShell *data)
 	}
 	if (cpStrtok != NULL)
 	{
-		chDir(cpStrtok);
+		chdir(cpStrtok);
 		setEnv("PWD", cpStrtok, data);
 	}
 	else
 	{
-		chDir("/");
+		chdir("/");
 		setEnv("PWD", "/", data);
 	}
 	(*data).stat = 0;
@@ -64,7 +64,7 @@ void cdInto(dataShell *data)
 	getcwd(pwd, sizeof(pwd));
 
 	direct = (*data).args[1];
-	if (chDir(direct) != 0)
+	if (chdir(direct) != 0)
 	{
 		getError(data, 2);
 		return;
@@ -81,7 +81,7 @@ void cdInto(dataShell *data)
 
 	(*data).stat = 0;
 
-	chDir(direct);
+	chdir(direct);
 }
 
 /**
@@ -106,7 +106,7 @@ void cdPrevious(dataShell *data)
 
 	setEnv("OLDPWD", cpPwd, data);
 
-	if (chDir(cpOld) == -1)
+	if (chdir(cpOld) == -1)
 		setEnv("PWD", cpPwd, data);
 	else
 		setEnv("PWD", cpOld, data);
@@ -122,7 +122,7 @@ void cdPrevious(dataShell *data)
 
 	(*data).stat = 0;
 
-	chDir(pPwd);
+	chdir(pPwd);
 }
 
 /**
@@ -146,7 +146,7 @@ void cdHome(dataShell *data)
 		return;
 	}
 
-	if (chDir(home) != -1)
+	if (chdir(home) != -1)
 	{
 		getError(data, 2);
 		free(pPwd);

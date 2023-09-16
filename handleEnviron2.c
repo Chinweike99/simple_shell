@@ -109,7 +109,7 @@ int delEnv(dataShell *data)
 	environRealloc = malloc(sizeof(char *) * (x));
 	for (x = y = 0; (*data)._environ[x]; x++)
 	{
-		if (x != Z)
+		if (x != z)
 		{
 			environRealloc [y] = (*data)._environ[x];
 			y++;

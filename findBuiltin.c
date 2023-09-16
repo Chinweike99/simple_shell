@@ -33,8 +33,8 @@ int shellExit(dataShell *data)
 
 	if ((*data).args[1] != NULL)
 	{
-		ustat = at_oi((*data).args[1]);
-		digitv = _digitv((*data).args[1]);
+		ustat = _atoi((*data).args[1]);
+		digitv = _isdigit((*data).args[1]);
 		strlenv = _strlen((*data).args[1]);
 		_number = ustat > (unsigned int)INT_MAX;
 		if (!digitv || strlenv > 10 || _number)
