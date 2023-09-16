@@ -203,14 +203,9 @@ char *pathError(dataShell *data);
 _linkedlist *sepEnd(_linkedlist **head, char item);
 void freeList(_linkedlist **head);
 _tracklist *addcmd(_tracklist **head, char *track);
-<<<<<<< Updated upstream
 void freeLi(_tracklist **head);
 _tracklist *nodeEnd(_tracklist **head, char *track);
 
-=======
-void freeLi(_linkedlist **head);
-void free_lineList(_tracklist **head);
->>>>>>> Stashed changes
 /**********checkSyntax*************/
 int charRepeated(char *str, int x);
 int findError(char *str, int x, char last);

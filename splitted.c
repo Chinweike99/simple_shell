@@ -160,8 +160,8 @@ int splitCmd(dataShell *data, char *str)
 			list_l = (*list_l).next;
 	}
 
-	freeLi(&head_s);
-	free_lineList(&head_l);
+	freeList(&head_s);
+	freeLi(&head_l);
 
 	if (iterate == 0)
 		return (0);
