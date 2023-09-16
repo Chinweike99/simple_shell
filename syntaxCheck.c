@@ -62,7 +62,7 @@ int findError(char *str, int x, char last)
 		}
 	}
 
-	return (findError(insert + 1, x + 1, *str));
+	return (findError(str + 1, x + 1, *str));
 }
 
 /**
@@ -159,7 +159,7 @@ int checkSyntax(dataShell *data, char *str)
 		return (1);
 	}
 
-	i = findError(str + start, 0, *(str + start));
+	x = findError(str + start, 0, *(str + start));
 	if (x != 0)
 	{
 		printError(data, str, start + x, 1);

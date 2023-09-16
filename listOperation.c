@@ -11,7 +11,7 @@ _linkedlist *sepEnd(_linkedlist **head, char item)
 {
 	_linkedlist *new, *tmp;
 
-	new = malloc(sizeof(sepList));
+	new = malloc(sizeof(_linkedlist));
 	if (new == NULL)
 		return (NULL);
 
@@ -70,7 +70,7 @@ _tracklist *addcmd(_tracklist **head, char *track)
 	if (new == NULL)
 		return (NULL);
 
-	(*new).track = track; or /*new->track = strdup(track);*/
+	(*new).track = track;
 	(*new).next = NULL;
 	tmp = *head;
 
@@ -118,7 +118,7 @@ void freeLi(_tracklist **head)
  * @head: linked list head pointer
  * @track: The command line.
  * Return: address of the head.
- *//*
+ */
 _tracklist *nodeEnd(_tracklist **head, char *track)
 {
 	_tracklist *new, *tmp;
@@ -136,9 +136,9 @@ _tracklist *nodeEnd(_tracklist **head, char *track)
 	else
 	{
 		while ((*tmp).next != NULL)
-			tmp = (tmp).next;
+			tmp = (*tmp).next;
 		(*tmp).next = new;
 	}
 
 	return (*head);
-}*/
+}

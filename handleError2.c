@@ -15,7 +15,7 @@ char *errorEnv(dataShell *data)
 	verstr = _itoa((*data).count);
 	mes = ": Not possible to add/remove from environment\n";
 	len = _strlen((*data).av[0]) + _strlen(verstr);
-	length += _strlen((*data).args[0]) + _strlen(mes) + 4;
+	len += _strlen((*data).args[0]) + _strlen(mes) + 4;
 	error = malloc(sizeof(char) * (len + 1));
 	if (error == 0)
 	{
