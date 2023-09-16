@@ -73,7 +73,7 @@ void cdInto(dataShell *data)
 	cpPwd = _strdup(pwd);
 	setEnv("OLDPWD", cpPwd, data);
 
-	cpDir = _strdup(direct);
+	copyDir = _strdup(direct);
 	setEnv("PWD", copyDir, data);
 
 	free(cpPwd);

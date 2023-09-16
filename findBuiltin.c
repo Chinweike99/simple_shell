@@ -17,7 +17,7 @@ int findBuilt(dataShell *data)
 	if (builtin != NULL)
 		return (builtin(data));
 
-	return (cmdExec(data));
+	return (execCmd(data));
 }
 /**
  * shellExit - Function that exits shell
