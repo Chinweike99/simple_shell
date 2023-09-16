@@ -56,13 +56,13 @@ char *_strtok(char str[], const char *delim)
  * @str: input string
  * Return: 1 if string is a number. 0 in other case.
  */
-int _isdigit(const char *str)
+int _isdigit(const char *d)
 {
 	unsigned int a = 0;
 
-	for (; str[a]; a++)
+	for (; d[a]; a++)
 	{
-		if (str[a] < 48 || str[a] > 57)
+		if (d[a] < 48 || d[a] > 57)
 			return (0);
 	}
 	return (1);
@@ -72,18 +72,18 @@ int _isdigit(const char *str)
  * @str: input string.
  * Return: returns nothing.
  */
-void revString(char *str)
+void revString(char *d)
 {
 	int count = 0, a, b;
 	char *strng, temp;
 
 	while (count >= 0)
 	{
-		if (str[count] == '\0')
+		if (d[count] == '\0')
 			break;
 		count++;
 	}
-	strng = str;
+	strng = d;
 
 	for (a = 0; a < (count - 1); a++)
 	{

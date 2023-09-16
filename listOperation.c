@@ -118,7 +118,7 @@ void freeLi(_tracklist **head)
  * @head: linked list head pointer
  * @track: The command line.
  * Return: address of the head.
- */
+ *//*
 _tracklist *nodeEnd(_tracklist **head, char *track)
 {
 	_tracklist *new, *tmp;
@@ -141,4 +141,4 @@ _tracklist *nodeEnd(_tracklist **head, char *track)
 	}
 
 	return (*head);
-}
+}*/

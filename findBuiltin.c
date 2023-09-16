@@ -58,7 +58,7 @@ int (*getBuiltin(char *cmd))(dataShell *)
 	builtint builtin[] = {
 		{ "env", envVar },
 		{ "exit", shellExit },
-		{ "setenv", setEnv },
+		{ "setenv", envSet },
 		{ "unsetenv", delEnv },
 		{ "cd", ccDir },
 		{ "help", getHelp },

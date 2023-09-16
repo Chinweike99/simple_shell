@@ -49,7 +49,7 @@ void helpUnsetenv(void)
  */
 void helpGeneral(void)
 {
-	char *help = "^-^ bash, version 1.0(1)-release\n";
+	char *help = "Simple_shell bash, version 1.0(1)-release\n";
 
 	write(STDOUT_FILENO, help, _strlen(help));
 	help = "These commands are defined internally.Type 'help' to see the list";

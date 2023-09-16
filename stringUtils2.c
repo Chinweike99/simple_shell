@@ -5,16 +5,16 @@
  * @str: string to be duplicated
  * Return: duplicated string
  */
-char *_strdup(const char *str)
+char *_strdup(const char *d)
 {
 	char *newStr;
 	size_t len;
 
-	len = _strlen(str);
+	len = _strlen(d);
 	newStr = malloc(sizeof(char) * (len + 1));
 	if (newStr == NULL)
 		return (NULL);
-	_memcpy(newStr, str, len + 1);
+	_memcpy(newStr, d, len + 1);
 	return (newStr);
 }
 
@@ -23,11 +23,11 @@ char *_strdup(const char *str)
  * @str: Type char pointer
  * Return: Always 0.
  */
-int _strlen(const char *str)
+int _strlen(const char *d)
 {
 	int len = 0;
 
-	for (; str[len] != 0; len++)
+	for (; d[len] != 0; len++)
 	{
 	}
 	return (len);

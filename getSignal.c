@@ -7,6 +7,6 @@
 void _callp(int cals)
 {
 	(void)cals;
-	write(STDOUT_FILENO, "\nSimple_Shell ", 14);
+	write(STDOUT_FILENO, "Simple_Shell ", 12);
 }
 

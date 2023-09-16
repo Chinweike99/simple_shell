@@ -18,8 +18,8 @@ int ccDir(dataShell *data)
              else
 	{
 		dom1 = _strcmp("~", direct);
-		dom2 = _strcmp("¢DOM ", direct);
-		isddash = _strcmp("$ ", direct);
+		dom2 = _strcmp("$HOME", direct);
+		isddash = _strcmp("--", direct);
 	}
 
 	if (direct == NULL || !dom1 || !dom2 || !isddash)

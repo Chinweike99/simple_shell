@@ -49,7 +49,7 @@ void shellLoop(dataShell *data)
 	iterate = 1;
 	while (iterate == 1)
 	{
-		write(STDIN_FILENO, "^-^ ", 4);
+		write(STDIN_FILENO, "Simple_shell$ ", 14);
 		str = readLine(&eof);
 		if (eof != -1)
 		{

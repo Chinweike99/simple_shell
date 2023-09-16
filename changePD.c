@@ -64,7 +64,7 @@ void cdInto(dataShell *data)
 	getcwd(pwd, sizeof(pwd));
 
 	direct = (*data).args[1];
-	if (chdir(direct) != 0)
+	if (chdir(direct) == -1)
 	{
 		getError(data, 2);
 		return;

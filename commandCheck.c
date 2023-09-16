@@ -113,7 +113,7 @@ int ifexecutable(dataShell *data)
 	{
 		return (x);
 	}
-	getError(data, 129);
+	getError(data, 127);
 	return (-1);
 }
 
@@ -127,7 +127,7 @@ int verifyPermit(char *direct, dataShell *data)
 {
 	if (direct == NULL)
 	{
-		getError(data, 129);
+		getError(data, 127);
 		return (1);
 	}
 
@@ -173,7 +173,7 @@ int execCmd(dataShell *data)
 		return (1);
 	if (exec == 0)
 	{
-		direct = locate((*data).args[0], data->_environ);
+		direct = locate((*data).args[0], (*data)._environ);
 		if (verifyPermit(direct, data) == 1)
 			return (1);
 	}
@@ -182,10 +182,10 @@ int execCmd(dataShell *data)
 	if (pid == 0)
 	{
 		if (exec == 0)
-			direct = locate((*data).args[0], data->_environ);
+			direct = locate((*data).args[0], (*data)._environ);
 		else
 			direct = (*data).args[0];
-		execve(direct + exec, (*data).args, data->_environ);
+		execve(direct + exec, (*data).args, (*data)._environ);
 	}
 	else if (pid < 0)
 	{
