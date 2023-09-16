@@ -40,7 +40,7 @@ char *errorEnv(dataShell *data)
  * @data: data relevant counter, arguments.
  * Return: Return the error string.
  */
-char *pathError(data_shell *datash)
+char *pathError(dataShell *data)
 {
 	int len;
 	char *verstr;

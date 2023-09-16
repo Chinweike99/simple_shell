@@ -178,7 +178,7 @@ void _callp(int cals);
 
 /***********HandleEnviron1*******/
 int cmpName(const char *env1, const char *ename);
-ar *getEnv(const char *ename, char **_environ);
+char *getEnv(const char *ename, char **_environ);
 int envVar(dataShell *data);
 
 /**********handleEnvironment2******/
@@ -195,13 +195,14 @@ char *errorShell(dataShell *data);
 
 /*******handleError2*********/
 char *errorEnv(dataShell *data);
-char *pathError(data_shell *datash);
+char *pathError(dataShell *data);
 
 /***********listOperation**********/
 _linkedlist *sepEnd(_linkedlist **head, char item);
 void freeList(_linkedlist **head);
 _tracklist *addcmd(_tracklist **head, char *track);
 void freeLi(_tracklist **head);
+_tracklist *nodeEnd(_tracklist **head, char *track);
 
 /**********checkSyntax*************/
 int charRepeated(char *str, int x);

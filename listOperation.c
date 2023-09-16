@@ -110,3 +110,33 @@ void freeLi(_tracklist **head)
 	}
 }
 
+/**
+ * nodeEnd - Function that adds a command line to the end
+ * of a line_list.
+ * @head: linked list head pointer
+ * @track: The command line.
+ * Return: address of the head.
+ */
+_tracklist *nodeEnd(_tracklist **head, char *track)
+{
+	_tracklist *new, *tmp;
+
+	new = malloc(sizeof(_tracklist));
+	if (new == NULL)
+		return (NULL);
+
+	(*new).track = track;
+	(*new).next = NULL;
+	tmp = *head;
+
+	if (tmp == NULL)
+		*head = new;
+	else
+	{
+		while ((*tmp).next != NULL)
+			tmp = (tmp).next;
+		(*tmp).next = new;
+	}
+
+	return (*head);
+}

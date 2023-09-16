@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * findBuilt - Function that finds builtins and commands

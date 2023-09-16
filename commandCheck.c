@@ -35,8 +35,8 @@ char *locate(char *cmd, char **_environ)
 	int ldirect, lcmd, x;
 	struct stat st;
 
-	path1 = _getenv("PATH", _environ);
-	if (path)
+	path1 = getEnv("PATH", _environ);
+	if (path1)
 	{
 		ptrPath = _strdup(path1);
 		lcmd = _strlen(cmd);
@@ -84,7 +84,7 @@ int ifexecutable(dataShell *data)
 	int x;
 	char *str;
 
-	input = (*data).args[0];
+	str = (*data).args[0];
 	for (x = 0; str[x]; x++)
 	{
 		if (str[x] == '.')
@@ -96,7 +96,7 @@ int ifexecutable(dataShell *data)
 			else
 				break;
 		}
-		else if (str[x] == '/' && i != 0)
+		else if (str[x] == '/' && x != 0)
 		{
 			if (str[x + 1] == '.')
 				continue;
@@ -173,7 +173,7 @@ int execCmd(dataShell *data)
 		return (1);
 	if (exec == 0)
 	{
-		dir = locate((*data).args[0], data->_environ);
+		direct = locate((*data).args[0], data->_environ);
 		if (verifyPermit(direct, data) == 1)
 			return (1);
 	}
@@ -184,7 +184,7 @@ int execCmd(dataShell *data)
 		if (exec == 0)
 			direct = locate((*data).args[0], data->_environ);
 		else
-			dir = (*data).args[0];
+			direct = (*data).args[0];
 		execve(direct + exec, (*data).args, data->_environ);
 	}
 	else if (pid < 0)
