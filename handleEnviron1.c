@@ -56,7 +56,7 @@ int envVar(dataShell *data)
 {
 	int x, y;
 
-	for (x = 0; (*data)._environ[x]; i++)
+	for (x = 0; (*data)._environ[x]; x++)
 	{
 
 		for (y = 0; data->_environ[x][y]; y++)
@@ -65,7 +65,7 @@ int envVar(dataShell *data)
 		write(STDOUT_FILENO, (*data)._environ[x], y);
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	(*data).status = 0;
+	(*data).stat = 0;
 
 	return (1);
 }

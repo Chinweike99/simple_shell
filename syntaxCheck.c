@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * charRepeated - Function that counts char repeated

@@ -88,7 +88,7 @@ int _strspn(char *str, char *accbytes)
 {
 	int a, b, bool;
 
-	for (a = 0; *(s + a) != '\0'; a++)
+	for (a = 0; *(str + a) != '\0'; a++)
 	{
 		bool = 1;
 		for (b = 0; *(accbytes + b) != '\0'; b++)

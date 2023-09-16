@@ -89,14 +89,37 @@ _tracklist *addcmd(_tracklist **head, char *track)
 }
 
 /**
+ * free_lineList - frees a line_list
+ * @head: head of the linked list.
+ * Return: no return.
+ */
+void free_lineList(_tracklist **head)
+{
+	_tracklist *temp;
+	_tracklist *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = (*curr).next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+
+/**
  * freeLi - Function that frees a line node
  * @head: linked list head
  * Return: no return.
  */
-void freeLi(_tracklist **head)
+void freeLi(_linkedlist **head)
 {
-	_tracklist *tmp;
-	_tracklist *curr;
+	_linkedlist *tmp;
+	_linkedlist *curr;
 
 	if (head != NULL)
 	{

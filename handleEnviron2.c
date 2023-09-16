@@ -16,7 +16,7 @@ char *infoCopy(char *ename, char *value)
 	lenValue = _strlen(value);
 	len1 = lenName + lenValue + 2;
 	new = malloc(sizeof(char) * (len1));
-	_strcpy(new, name);
+	_strcpy(new, ename);
 	_strcat(new, "=");
 	_strcat(new, value);
 	_strcat(new, "\0");
@@ -50,8 +50,8 @@ void setEnv(char *ename, char *value, dataShell *data)
 		free(envVar);
 	}
 
-	(*data)._environ = _reallocdp((*data)._environ, x, sizeof(char *) * (x + 2));
-	(*data).environ[x] = infoCopy(ename, value);
+	(*data)._environ = _realloc2((*data)._environ, x, sizeof(char *) * (x + 2));
+	(*data)._environ[x] = infoCopy(ename, value);
 	(*data)._environ[x + 1] = NULL;
 }
 
