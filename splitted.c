@@ -65,7 +65,7 @@ void addNodes(_linkedlist **head_s, _tracklist **head_l, char *str)
 
 		if (str[a] == '|' || str[a] == '&')
 		{
-			sepEnd(head_s, [a]);
+			sepEnd(head_s, str[a]);
 			a++;
 		}
 	}
@@ -146,12 +146,12 @@ int splitCmd(dataShell *data, char *str)
 
 	while (list_l != NULL)
 	{
-		(*data).str = (*list_l).line;
-		(*data).args = splitLine((*data).str);
+		(*data).str = (*list_l).track;
+		(*data).args = lineSplit((*data).str);
 		iterate = findBuilt(data);
 		free((*data).args);
 
-		if (loop == 0)
+		if (iterate == 0)
 			break;
 
 		goNext(&list_s, &list_l, data);
@@ -160,7 +160,7 @@ int splitCmd(dataShell *data, char *str)
 			list_l = (*list_l).next;
 	}
 
-	freeList(&head_s);
+	freeLi(&head_s);
 	free_lineList(&head_l);
 
 	if (iterate == 0)

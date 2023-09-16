@@ -29,7 +29,7 @@ char *strmsg(dataShell *data, char *mes, char *error, char *verstr)
 	}
 	else
 	{
-		_strcat(error, (*datash).[1]);
+		_strcat(error, (*data).args[1]);
 	}
 
 	_strcat(error, "\n");

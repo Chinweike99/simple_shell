@@ -36,7 +36,7 @@ void setData(dataShell *data, char **av)
 	(*data).stat = 0;
 	(*data).count = 1;
 
-	for (a = 0; _environ[a]; a++)
+	for (a = 0; environ[a]; a++)
 		;
 
 	(*data)._environ = malloc(sizeof(char *) * (a + 1));

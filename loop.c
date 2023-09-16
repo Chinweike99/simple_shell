@@ -63,7 +63,7 @@ void shellLoop(dataShell *data)
 				free(str);
 				continue;
 			}
-			str = repVariable(str, data);
+			str = repVar(str, data);
 			iterate = splitCmd(data, str);
 			(*data).count += 1;
 			free(str);

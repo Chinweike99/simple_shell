@@ -63,7 +63,7 @@ int varCheck(singlelist **hd, char *inp, char *st, dataShell *data)
 		{
 			if (inp[a + 1] == '?')
 				rvarNode(hd, 2, st, last), a++;
-			else if (inp[i + 1] == '$')
+			else if (inp[a + 1] == '$')
 				rvarNode(hd, 2, (*data).pid, lpd), a++;
 			else if (inp[a + 1] == '\n')
 				rvarNode(hd, 0, NULL, 0);
@@ -102,25 +102,25 @@ char *replaced_str(singlelist **head, char *str, char *new_str, int nlen)
 	{
 		if (str[j] == '$')
 		{
-			if (!((*indx).len_var) && !((*indx).len_val))
+			if (!((*indx).varLen) && !((*indx).lenVal))
 			{
 				new_str[i] = str[j];
 				j++;
 			}
-			else if ((*indx).len_var && !((*indx).len_val))
+			else if ((*indx).varLen && !((*indx).lenVal))
 			{
-				for (k = 0; k < (*indx).len_var; k++)
+				for (k = 0; k < (*indx).varLen; k++)
 					j++;
 				i--;
 			}
 			else
 			{
-				for (k = 0; k < (*indx).len_val; k++)
+				for (k = 0; k < (*indx).lenVal; k++)
 				{
-					new_str[i] = (*indx).val[k];
+					new_str[i] = (*indx).value[k];
 					i++;
 				}
-				j += ((*indx).len_var);
+				j += ((*indx).varLen);
 				i--;
 			}
 			indx = (*indx).next;
@@ -151,7 +151,7 @@ char *repVar(char *str, dataShell *data)
 	stat = _itoa((*data).stat);
 	head = NULL;
 
-	olen = check_vars(&head, str, stat, data);
+	olen = varCheck(&head, str, stat, data);
 
 	if (head == NULL)
 	{
@@ -164,7 +164,7 @@ char *repVar(char *str, dataShell *data)
 
 	while (indx != NULL)
 	{
-		nlen += ((*indx).len_val - (*indx).len_var);
+		nlen += ((*indx).lenVal - (*indx).varLen);
 		indx = (*indx).next;
 	}
 
@@ -177,7 +177,7 @@ char *repVar(char *str, dataShell *data)
 
 	free(str);
 	free(stat);
-	free_rvar_list(&head);
+	rvarList(&head);
 
 	return (new_str);
 }

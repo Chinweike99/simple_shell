@@ -120,7 +120,7 @@ void envCheck(singlelist **hd, char *inp, dataShell *data);
 
 /*********memUtils********/
 void _memcpy(void *destptr, const void *srcptr, unsigned int size);
-void *realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_realloc2(char **ptr, unsigned int old_size, unsigned int new_size);
 
 /********shell.c*********/
@@ -129,7 +129,7 @@ void freeData(dataShell *data);
 
 /***********splitted.c********/
 char **lineSplit(char *str);
-int splitCmd(dataShell *data, char str);
+int splitCmd(dataShell *data, char *str);
 char *swapChar(char *str, int bool);
 void addNodes(_linkedlist **head_s, _tracklist **head_l,char *str);
 void goNext(_linkedlist **list_s, _tracklist **list_l, dataShell *data);
@@ -145,7 +145,9 @@ void helpExit(void);
 void auxhelp(void);
 void helpalias(void);
 void helpcd(void);
-
+/***********listoperation2*******/
+void rvarList(singlelist **head);
+singlelist *rvarNode(singlelist **head, int lvar, char *value, int lval);
 
 /********changePD********/
 void changeDir(dataShell *data);
@@ -201,9 +203,14 @@ char *pathError(dataShell *data);
 _linkedlist *sepEnd(_linkedlist **head, char item);
 void freeList(_linkedlist **head);
 _tracklist *addcmd(_tracklist **head, char *track);
+<<<<<<< Updated upstream
 void freeLi(_tracklist **head);
 _tracklist *nodeEnd(_tracklist **head, char *track);
 
+=======
+void freeLi(_linkedlist **head);
+void free_lineList(_tracklist **head);
+>>>>>>> Stashed changes
 /**********checkSyntax*************/
 int charRepeated(char *str, int x);
 int findError(char *str, int x, char last);
