@@ -70,19 +70,19 @@ char *_itoa(int m)
  * @str: the string.
  * Return: integer.
  */
-int _atoi(char *str)
+int _atoi(char *s)
 {
 	unsigned int count = 0, size = 0, rc = 0, lp = 1, m = 1, a;
 
-	while (*(str + count) != '\0')
+	while (*(s + count) != '\0')
 	{
-		if (size > 0 && (*(str + count) < '0' || *(str + count) > '9'))
+		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
 			break;
 
-		if (*(str + count) == '-')
+		if (*(s + count) == '-')
 			lp *= -1;
 
-		if ((*(str + count) >= '0') && (*(str + count) <= '9'))
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
 		{
 			if (size > 0)
 				m *= 10;
@@ -93,7 +93,7 @@ int _atoi(char *str)
 
 	for (a = count - size; a < count; a++)
 	{
-		rc = rc + ((*(str + a) - 48) * m);
+		rc = rc + ((*(s + a) - 48) * m);
 		m /= 10;
 	}
 	return (rc * lp);
