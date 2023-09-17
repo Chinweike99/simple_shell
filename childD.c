@@ -8,25 +8,23 @@
 int ccDir(dataShell *data)
 {
 	char *direct;
-	int dom2, dom1, isddash;
+	int dom1, dom2, isddash;
 
 	direct = (*data).args[1];
 
-	if (direct == NULL)
-            {cdHome(data);
-                  return (1);}
-             else
+	if (direct != NULL)
 	{
-		dom1 = _strcmp("~", direct);
-		dom2 = _strcmp("$HOME", direct);
+		dom1 = _strcmp("$HOME", direct);
+		dom2 = _strcmp("~", direct);
 		isddash = _strcmp("--", direct);
 	}
 
 	if (direct == NULL || !dom1 || !dom2 || !isddash)
 	{
 		cdHome(data);
-		return (1);
+                  return (1);
 	}
+
 
 	if (_strcmp("-", direct) == 0)
 	{
@@ -34,7 +32,7 @@ int ccDir(dataShell *data)
 		return (1);
 	}
 
-	if (_strcmp("..", direct) == 0 || _strcmp(".", direct) == 0)
+	if (_strcmp(".", direct) == 0 || _strcmp("..", direct) == 0)
 	{
 		changeDir(data);
 		return (1);

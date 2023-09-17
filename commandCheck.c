@@ -42,6 +42,7 @@ char *locate(char *cmd, char **_environ)
 		lcmd = _strlen(cmd);
 		tokenPath = _strtok(ptrPath, ":");
 		x = 0;
+
 		while (tokenPath != NULL)
 		{
 			if (colCheck(path1, &x))
