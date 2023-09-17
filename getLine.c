@@ -81,7 +81,7 @@ ssize_t getLine(char **ptr, size_t *v, FILE *stream)
 	reval = str;
 	if (x != 0)
 		str = 0;
-            free(buff);
+
 	return (reval);
 }
 

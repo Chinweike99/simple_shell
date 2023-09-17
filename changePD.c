@@ -7,11 +7,11 @@
  */ 
 void changeDir(dataShell *data)
 {
-	char cwd[PATH_MAX];
+	char pwd[PATH_MAX];
 	char *direct, *cpPwd, *cpStrtok;
 
-	getcwd(cwd, sizeof(cwd));
-	cpPwd = _strdup(cwd);
+	getcwd(pwd, sizeof(pwd));
+	cpPwd = _strdup(pwd);
 	setEnv("OLDPWD", cpPwd, data);
 	direct = (*data).args[1];
 	if (_strcmp(".", direct) == 0)
@@ -91,11 +91,11 @@ void cdInto(dataShell *data)
  */
 void cdPrevious(dataShell *data)
 {
-	char cwd[PATH_MAX];
+	char pwd[PATH_MAX];
 	char *pPwd, *cpOld, *pOld, *cpPwd;
 
-	getcwd(cwd, sizeof(cwd));
-	cpPwd = _strdup(cwd);
+	getcwd(pwd, sizeof(pwd));
+	cpPwd = _strdup(pwd);
 
 	pOld = getEnv("OLDPWD", (*data)._environ);
 
@@ -132,10 +132,10 @@ void cdPrevious(dataShell *data)
 void cdHome(dataShell *data)
 {
 	char *pPwd, *home;
-	char cwd[PATH_MAX];
+	char pwd[PATH_MAX];
 
-	getcwd(cwd, sizeof(cwd));
-	pPwd = _strdup(cwd);
+	getcwd(pwd, sizeof(pwd));
+	pPwd = _strdup(pwd);
 
 	home = getEnv("HOME", (*data)._environ);
 
@@ -146,7 +146,7 @@ void cdHome(dataShell *data)
 		return;
 	}
 
-	if (chdir(home) != -1)
+	if (chdir(home) == -1)
 	{
 		getError(data, 2);
 		free(pPwd);
@@ -154,7 +154,7 @@ void cdHome(dataShell *data)
 	}
 
 	setEnv("OLDPWD", pPwd, data);
-	setEnv("CWD", home, data);
+	setEnv("PWD", home, data);
 	free(pPwd);
 	(*data).stat = 0;
 }

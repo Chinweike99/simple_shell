@@ -24,7 +24,7 @@ int getError(dataShell *data, int val)
 		break;
 	case 2:
 		if (_strcmp("exit", (*data).args[0]) == 0)
-			error = errorShell(data);
+			error = errorEnv(data);
 		else if (_strcmp("cd", (*data).args[0]) == 0)
 			error = errorMsg(data);
 		break;
